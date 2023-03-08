@@ -1,5 +1,6 @@
 package com.candra.football_player.Database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -24,15 +25,34 @@ public class MyDatabaseHelper extends SQLiteOpenHelper
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-
+    public void onCreate(SQLiteDatabase db)
+    {
         String query = "CREATE TABLE " + TABLE_NAME + " (" + FIELD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + FIELD_NAMA + " VARCHAR(50), " + FIELD_NOMOR + " VARCHAR(2)," + FIELD_KLUB + " VARCHAR(50));";
-
         db.execSQL(query);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
+    {
+        String query = "DROP TABLE IF EXISTS " + TABLE_NAME;
+        db.execSQL(query);
+        onCreate(db);
+    }
 
+    public long tambahPlayer(String nama, String nomor, String klub)
+    {
+        // Cara meminta akses untuk menulis data di database
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Bertugas Memasukkan data ke database
+        ContentValues cv = new ContentValues();
+
+        cv.put(FIELD_NAMA, nama);
+        cv.put(FIELD_NOMOR, nomor);
+        cv.put(FIELD_KLUB, klub);
+
+        long execute = db.insert(TABLE_NAME, null, cv);
+
+        return execute;
     }
 }
