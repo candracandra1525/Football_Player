@@ -2,6 +2,7 @@ package com.candra.football_player.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -55,4 +56,28 @@ public class MyDatabaseHelper extends SQLiteOpenHelper
 
         return execute;
     }
+
+    public Cursor bacaDataPlayer()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // Bisa Ascending dan Descending
+        // String query = "SELECT * FROM " + TABLE_NAME + " ORDER BY " + FIELD_NAMA + " DESCENDING;";
+        // String query = "SELECT * FROM " + TABLE_NAME + " ORDER BY " + FIELD_NAMA + " ;";
+        String query = "SELECT * FROM " + TABLE_NAME + " ;";
+
+        Cursor varCursor = null;
+        if(db != null)
+        {
+            // Selection Argumen => Jika pakai WHERE pada query
+            varCursor = db.rawQuery(query, null);
+        }
+        return varCursor;
+    }
+
+
+
+
+
 }
+

@@ -29,7 +29,8 @@ public class TambahActivity extends AppCompatActivity
         btnTambah = findViewById(R.id.btn_tambah);
         btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 String nama, nomor, klub;
                 nama = etNama.getText().toString();
                 nomor = etNomor.getText().toString();
