@@ -13,6 +13,15 @@
         >
 
         <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Id"
+            android:textSize="18sp"
+            android:visibility="gone"
+            />
+
+        <TextView
             android:id="@+id/tv_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
