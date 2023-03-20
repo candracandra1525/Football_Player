@@ -63,8 +63,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper
 
         // Bisa Ascending dan Descending
         // String query = "SELECT * FROM " + TABLE_NAME + " ORDER BY " + FIELD_NAMA + " DESCENDING;";
-        // String query = "SELECT * FROM " + TABLE_NAME + " ORDER BY " + FIELD_NAMA + " ;";
-        String query = "SELECT * FROM " + TABLE_NAME + " ;";
+         String query = "SELECT * FROM " + TABLE_NAME + " ORDER BY " + FIELD_NAMA + " ;";
+//        String query = "SELECT * FROM " + TABLE_NAME + " ;";
 
         Cursor varCursor = null;
         if(db != null)

@@ -3,6 +3,7 @@ package com.candra.football_player.Database;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,7 +76,12 @@ public class AdapterFootballPlayer extends RecyclerView.Adapter<AdapterFootballP
                     pesan.setPositiveButton("Ubah", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
+                            Intent intent = new Intent();
+                            intent.putExtra("varId", tvId.getText().toString());
+                            intent.putExtra("varNama", tvNama.getText().toString());
+                            intent.putExtra("varNomor", tvNomor.getText().toString());
+                            intent.putExtra("varKlub", tvKlub.getText().toString());
+                            ctx.startActivity(intent);
                         }
                     });
 

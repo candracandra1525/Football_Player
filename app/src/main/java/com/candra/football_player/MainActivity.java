@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         rvPlayer = findViewById(R.id.rv_player);
 
-
         myDB = new MyDatabaseHelper(MainActivity.this);
         fabTambah = findViewById(R.id.fab_tambah);
         fabTambah.setOnClickListener(new View.OnClickListener() {
