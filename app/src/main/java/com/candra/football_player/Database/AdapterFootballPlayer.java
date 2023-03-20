@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.candra.football_player.MainActivity;
 import com.candra.football_player.R;
+import com.candra.football_player.UbahActivity;
 
 import java.util.ArrayList;
 
@@ -76,7 +77,7 @@ public class AdapterFootballPlayer extends RecyclerView.Adapter<AdapterFootballP
                     pesan.setPositiveButton("Ubah", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Intent intent = new Intent();
+                            Intent intent = new Intent(ctx, UbahActivity.class);
                             intent.putExtra("varId", tvId.getText().toString());
                             intent.putExtra("varNama", tvNama.getText().toString());
                             intent.putExtra("varNomor", tvNomor.getText().toString());
